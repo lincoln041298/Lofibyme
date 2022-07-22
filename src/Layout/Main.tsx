@@ -3,15 +3,15 @@ import { Footer, Header } from "../components/common";
 
 export interface MainlayoutProp {
   children?: React.ReactNode;
-};
+}
 
-export function Main ({ children }: MainlayoutProp) {
+export function Main({ children }: MainlayoutProp) {
   return (
-    <div>
+    <>
       <Header />
-      <div>{children}</div>
+      <div>dkjfhasdkfh</div>
+      {children}
       <Footer />
-    </div>
+    </>
   );
-};
-
+}
