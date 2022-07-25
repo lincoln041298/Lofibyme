@@ -1,1 +1,1 @@
-export * from "./SwitchNightDay";
+export * from "./ButtonSwitch";

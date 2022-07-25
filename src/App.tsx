@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { Intheday } from "./components/background/Intheday";
-import { Footer, Header } from "./components/common";
-import { Main } from "./Layout";
-import "@/scss/App.scss";
 import { Load } from "@/components/loading";
+import "@/scss/App.scss";
+import { useEffect, useState } from "react";
+import { Provider, useSelector } from "react-redux";
+import { Intheday } from "./components/background/Intheday";
+import { Main } from "./Layout";
+import store from "./redux/store";
 
 function App() {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000);
   }, []);
 
   if (loading)
@@ -29,9 +28,11 @@ function App() {
     );
   return (
     <div className="App">
-      <Main>
-        <Intheday />
-      </Main>
+      <Provider store={store}>
+        <Main>
+          <Intheday />
+        </Main>
+      </Provider>
     </div>
   );
 }
